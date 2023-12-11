@@ -1,0 +1,35 @@
+{
+	"schemas": {
+		"employee": {
+		  "ID": "email",
+		  "Labels": ["email", "personnel", "alais"],
+		  "PropTypes": {
+		  	"user_type": "string",
+		  	"email": "string",
+		  	"personnel_id": "string"
+		  },
+		  "Relations": [
+		    {
+		      "RelationKey": "relations",
+		      "EndRelation": {
+		        "EndID": "email",
+		        "Type": "supervisor_type",
+		        "PropTypes": {}
+		      }
+		    }
+		  ],
+		  "ReplaceKeys": {
+		  	"primaryEmail": "email",
+			"name__familyName": "last_name",
+			"name__givenName": "first_name",
+			"name__fullName": "name",
+		  },
+		  "Ignore": [
+		  	"customer_id",
+			"thumbnail_photo_etag",
+			"ssh_public_keys",
+			"aliases"
+		  ]
+		}
+	}
+}
